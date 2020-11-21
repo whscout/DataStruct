@@ -30,4 +30,5 @@ func main() {
 	wg.Wait()
 
 	fmt.Println(total)
+	fmt.Println("aaaaaa")
 }
