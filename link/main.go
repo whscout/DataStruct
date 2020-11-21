@@ -20,6 +20,19 @@ func (node *node) printLink() {
 	fmt.Println()
 }
 
+func (head *node) reversalLink1() *node {
+	cur := head
+	var prev *node
+	for cur != nil {
+		p := cur.next
+		cur.next = prev
+		prev = cur
+		cur = p
+	}
+	prev.printLink()
+	return prev
+}
+
 func (head *node) reversalLink() *node {
 	cur := head
 	var prev *node
@@ -107,10 +120,10 @@ func main() {
 
 	head.printLink()
 
-	head = head.reversalLink()
+	head = head.reversalLink1()
 
 	//head.swapNodeInPair()
 
-	head = reverseKGroup(head, 4)
-	head.printLink()
+	//head = reverseKGroup(head, 4)
+	//head.printLink()
 }
